@@ -318,6 +318,38 @@ section{
     padding: 1rem 0;
     line-height: 1.8;
 }
+.home1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(bg4.jpg),no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+}
+
+.home1 .content1{
+    text-align: center;
+    width: 60rem;
+}
+
+.home1 .content1 h3{
+    color: var(--black);
+    font-size: 3rem;
+}
+
+.home1 .content1 h3 span{
+    color: var(--orange);
+
+}
+
+.home1 .content1 p{
+    color: var(--light-color);
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
 
 .features .box-container{
     display: grid;
