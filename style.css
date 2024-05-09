@@ -84,7 +84,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    padding: 2rem 1%;
     background: #fff;
     box-shadow: var(--box-shadow);
 }
@@ -325,8 +325,8 @@ section{
     background: url(background5.jpg),no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 17rem;
-    padding-bottom: 10rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .home1 .content1{
@@ -384,19 +384,23 @@ section{
     padding: 1rem 0;
 }
 
-.product .product-slider{
-    padding: 1rem;
-    
-    
+
+.products .swiper .product-slider {
+    margin: 20px;
+    position: relative;
 }
 
-.products .product-slider:first-child{
+.products .product-slider {
+    display: flex; /* Added */
+    flex-direction: row; /* Changed to row layout (default) */
+    padding: 1rem;
+}
+
+.products .product-slider:first-child {
     margin: 2rem;
 }
 
-
-
-.products .product-slider .box{
+.products .product-slider .box {
     background: #fff;
     border-radius: .5rem;
     text-align: center;
@@ -405,35 +409,35 @@ section{
     outline: var(--outline);
     box-shadow: var(--box-shadow);
     transition: .2s linear;
-    
-
-    
 }
 
-.products .product-slider .box:hover{
+.products .product-slider .box:hover {
     outline-offset: 0rem;
     outline: var(--outline-hover);
 }
 
-.products .product-slider .box img{
+.products .product-slider .box img {
     height: 200px;
     width: 200px;
 }
 
-.products .product-slider .box h3{
+.products .product-slider .box h3 {
     font-size: 2.5rem;
     color: var(--black);
 }
-.products .product-slider .box .price{
+
+.products .product-slider .box .price {
     font-size: 2rem;
     color: var(--black);
     padding: .5rem 0;
 }
-.products .product-slider .box .stars{
+
+.products .product-slider .box .stars {
     font-size: 1.7rem;
     color: var(--orange);
     padding: .5rem 0;
 }
+
 
 
 .about .box-container{
@@ -555,14 +559,91 @@ section{
 
 
 
+.causes .about-box h1{
+    font-size: 20px;
+    color: #130f40;
+}
+
+.causes .about-box p{
+    font-size: 15px;
+}
+
+.causes .about-box2 {
+    background-color: #f0f7fb;
+    border-left: solid 6px #3498db;
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    line-height: 18px;
+    overflow: hidden;
+    padding: 12px;
+}
+
+/* animation */
+
+@keyframes advancedAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateX(-20px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1) translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+.causes .about-box2 {
+    background-color: #f0f7fb;
+    border-left: solid 6px #3498db;
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    line-height: 18px;
+    overflow: hidden;
+    padding: 12px;
+    animation: advancedAnimation 0.5s ease-out forwards; /* Apply advanced animation */
+}
+
+@keyframes superAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.content h3 {
+    animation: superAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
 
 
+@keyframes blinkAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
-
-
-
-
-
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+    animation: blinkAnimation 1s infinite; /* Adjust the durations and timing functions as needed */
+}
 
 
 
@@ -625,5 +706,50 @@ section{
     }
     .footer{
         text-align: center;
+    }
+
+    .header .logo{
+        font-size: 12px;
+    }
+
+    .home1 .content1 h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:450px){
+    .causes .about-box h1{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:375px){
+    .header .logo{
+        font-size: 8px;
+    }
+}
+
+@media (max-width:320px){
+    .header .icons div{
+        width: 2.5rem;
+    }
+    .home1 .content1 h3{
+        font-size: 12px;
+    }
+
+    
+}
+
+@media screen and (max-width: 768px) {
+    .products .product-slider {
+        flex-direction: row; /* Change back to horizontal layout for mobile */
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+        padding: 0; /* Reset padding for better mobile layout */
+    }
+
+    .products .product-slider .box {
+        flex: 0 0 auto; /* Reset flex-grow and flex-shrink properties */
+        width: 80%; /* Set width to occupy 80% of the container */
+        margin: 0 10px; /* Add margin for spacing between items */
     }
 }
